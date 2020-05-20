@@ -7,6 +7,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.gdu.letranbaosuong.dhpm11.androidxmlparser.Models.Country;
+import com.gdu.letranbaosuong.dhpm11.androidxmlparser.Models.Product;
 import com.gdu.letranbaosuong.dhpm11.androidxmlparser.Services.Service;
 import com.gdu.letranbaosuong.dhpm11.androidxmlparser.Widgets.CustomListViewAdapter;
 
@@ -28,34 +29,33 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        textView = findViewById(R.id.textView);
-
         Service service = new Service();
 
         try {
-            XmlPullParser parser = service.readXML("country.xml", getApplicationContext());
+            // doc file xml
+            XmlPullParser parser = service.readXML("product.xml"
+                    , getApplicationContext());
 
-            ArrayList<Country> countries = service.parseXML(parser);
+            // xu ly xml sang ArrayList<Product> cho java xu dung
+            ArrayList<Product> countries = service.parseXMLProduct(parser);
 
-            String text = "";
-
+            // java xu ly countries
             String[] mainTitle = new String[countries.size()];
             String[] subTitle = new String[countries.size()];
             String[] id = new String[countries.size()];
 
-            for (Country country : countries) {
-                text += "id : " + country.getId() + " name : " + country.getName() + " capital : " + country.getCapital() + "\n";
-            }
-
             for (int i = 0; i < countries.size(); i++) {
                 id[i] = countries.get(i).getId();
                 mainTitle[i] = countries.get(i).getName();
-                subTitle[i] = countries.get(i).getCapital();
+                subTitle[i] = countries.get(i).getColor() + " - " + countries.get(i).getPrice();
             }
 
-//            textView.setText(text);
-
-            CustomListViewAdapter adapter = new CustomListViewAdapter(this, mainTitle, subTitle, id);
+            // hien thi gia tri len man hinh
+            CustomListViewAdapter adapter = new CustomListViewAdapter(
+                    this,
+                    mainTitle,
+                    subTitle,
+                    id);
             list = findViewById(R.id.list);
             list.setAdapter(adapter);
 

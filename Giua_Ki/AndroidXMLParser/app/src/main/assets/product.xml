@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<products>
+    <product id="1">
+        <name>Iphone X</name>
+        <color>Black</color>
+        <price>30000000</price>
+    </product>
+    <product id="2">
+        <name>Samsung</name>
+        <color>Blue</color>
+        <price>17000000</price>
+    </product>
+    <product id="3">
+        <name>IPad Pro</name>
+        <color>White</color>
+        <price>20000000</price>
+    </product>
+    <product id="4">
+        <name>Oppo F5</name>
+        <color>Green</color>
+        <price>7500000</price>
+    </product>
+</products>
