@@ -1,0 +1,45 @@
+Gson gson = new Gson();
+//                Product[] productArray = gson.fromJson(response, Product[].class);
+////                for (Product product : productArray) {
+////                    Toast.makeText(MainActivity.this, product.toString(), Toast.LENGTH_SHORT).show();
+////                }
+
+//                Type produstListType = new TypeToken<ArrayList<Product>>() {
+//                }.getType();
+//                ArrayList<Product> productArrayList = gson.fromJson(response, produstListType);
+//                for (Product product : productArrayList) {
+//                    Toast.makeText(MainActivity.this, product.toString(), Toast.LENGTH_SHORT).show();
+//                }
+
+//                Product product = gson.fromJson(response, Product.class);
+//                Toast.makeText(MainActivity.this, product.toString(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this, response, Toast.LENGTH_SHORT).show();
+
+//                Gson gson = new Gson();
+//                Product product = gson.fromJson(response, Product.class);
+//                Toast.makeText(MainActivity.this, product.toString(), Toast.LENGTH_SHORT).show();
+//                txt.setText(response.toString());
+
+//                Gson gson = new Gson();
+//                String s = "";
+//                Product[] products = gson.fromJson(response, Product[].class);
+//                for (Product product : products) {
+//                    Toast.makeText(MainActivity.this, product.toString(), Toast.LENGTH_SHORT).show();
+//                    s += product.toString();
+//                }
+//                txt.setText(s);
+
+//                Gson gson=new Gson();
+
+
+RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+
+@Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String, String> param = new HashMap();
+                param.put("name", final_name);
+                param.put("color", final_color);
+                param.put("price", final_price);
+                return param;
+            }

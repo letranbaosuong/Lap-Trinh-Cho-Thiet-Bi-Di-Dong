@@ -32,25 +32,27 @@ public class MainActivity extends AppCompatActivity {
         Service service = new Service();
 
         try {
-            // doc file xml
+            // Bước 1: Đọc file xml
             XmlPullParser parser = service.readXML("product.xml"
                     , getApplicationContext());
 
-            // xu ly xml sang ArrayList<Product> cho java xu dung
-            ArrayList<Product> countries = service.parseXMLProduct(parser);
+            // Bước 2: Xử lý xml sang ArrayList<Product> cho java sử dụng
+            ArrayList<Product> products = service.parseXMLProduct(parser);
 
-            // java xu ly countries
-            String[] mainTitle = new String[countries.size()];
-            String[] subTitle = new String[countries.size()];
-            String[] id = new String[countries.size()];
+            // Bước 3: Java xư lý products
+            String[] mainTitle = new String[products.size()];
+            String[] subTitle = new String[products.size()];
+            String[] id = new String[products.size()];
 
-            for (int i = 0; i < countries.size(); i++) {
-                id[i] = countries.get(i).getId();
-                mainTitle[i] = countries.get(i).getName();
-                subTitle[i] = countries.get(i).getColor() + " - " + countries.get(i).getPrice();
+            for (int i = 0; i < products.size(); i++) {
+                id[i] = products.get(i).getId();
+                mainTitle[i] = products.get(i).getName();
+                subTitle[i] = products.get(i).getColor()
+                        + " - "
+                        + products.get(i).getPrice();
             }
 
-            // hien thi gia tri len man hinh
+            // Bước 4: Hiển thị các thông tin lên màn hình
             CustomListViewAdapter adapter = new CustomListViewAdapter(
                     this,
                     mainTitle,

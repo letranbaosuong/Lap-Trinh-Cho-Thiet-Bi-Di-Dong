@@ -1,0 +1,18 @@
+parser XML + Json(dựng server)
+
+thư viện, công cụ XML
+
+get, insert 
+
+get: yêu cầu server trả về cái gì đó (lấy dữ liệu xuống cho client), tham số sẽ được đính kìm trên đường link
+
+
+POST – Create: Tạo dữ liệu mới
+GET – Read: Lấy dữ liệu về
+PUT – Update: Cập nhật dữ liệu
+DELETE – Delete: Xóa dữ liệu
+
+Để tạo một tài nguyên trên máy chủ, bạn cần sử dụng phương thức POST.
+Để truy xuất một tài nguyên, sử dụng GET.
+Để thay đổi trạng thái một tài nguyên hoặc để cập nhật nó, sử dụng PUT.
+Để huỷ bỏ hoặc xoá một tài nguyên, sử dụng DELETE.

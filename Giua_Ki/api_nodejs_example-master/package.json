@@ -11,11 +11,12 @@
   "license": "ISC",
   "devDependencies": {
     "mysql": "^2.15.0",
-    "nodemon": "^1.17.5"
+    "nodemon": "^2.0.4"
   },
   "dependencies": {
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
+    "object-to-xml": "^2.0.0",
     "util": "^0.10.3"
   }
 }
